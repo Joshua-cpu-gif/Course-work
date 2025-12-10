@@ -20,6 +20,21 @@ function KeyPadComponent(props) {
       }
     }
 
+    // TASK 2: SHOW ME BUTTON
+    else if (value === "show me") {
+      window.open("YOUR_IMAGE_URL_HERE", "_blank");
+    }
+
+    // TASK 3: SQUARE BUTTON
+    else if (value === "square") {
+      if (!isNaN(text1) && text1 !== "") {
+        const squared = Number(text1) * Number(text1);
+        setText1(squared.toString());
+      } else {
+        alert("Enter a valid number first!");
+      }
+    }
+
     else {
       setText1(text1 + value);
     }
@@ -64,6 +79,12 @@ function KeyPadComponent(props) {
         <Button label="0" ClickHandle={ClickHandle} />
         <Button label="=" ClickHandle={ClickHandle} />
         <Button label="/" ClickHandle={ClickHandle} />
+      </div>
+
+      {/* TASK 2 + TASK 3 BUTTONS */}
+      <div>
+        <Button label="show me" ClickHandle={ClickHandle} />
+        <Button label="square" ClickHandle={ClickHandle} />
       </div>
     </div>
   );
